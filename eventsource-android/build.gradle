@@ -40,8 +40,8 @@ ext {
     publishedGroupId = 'com.zcy'//JCenter的GroupId
     artifact = 'eventsource-android'//JCenter的ArtifactId
 
-    siteUrl = 'https://github.com/PureAway/ToastProject'
-    gitUrl = 'https://github.com/PureAway/ToastProject.git'
+    siteUrl = 'https://github.com/PureAway/EventSource'
+    gitUrl = 'https://github.com/PureAway/EventSource.git'
 
     libraryVersion = '0.0.1'//版本号
     libraryName = 'eventsource-android'//项目名字，没什么用
