@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+}
+
+ext {
+    bintrayRepo = 'maven'////bintray上的仓库名，一般为maven
+    bintrayName = 'eventsource-android'//bintray上的项目名
+
+    publishedGroupId = 'com.zcy'//JCenter的GroupId
+    artifact = 'eventsource-android'//JCenter的ArtifactId
+
+    siteUrl = 'https://github.com/PureAway/ToastProject'
+    gitUrl = 'https://github.com/PureAway/ToastProject.git'
+
+    libraryVersion = '0.0.1'//版本号
+    libraryName = 'eventsource-android'//项目名字，没什么用
+    libraryDescription = 'A nice library for android to use eventSource based on okhttp'
+    //项目描述，没什么用
+
+    //开发者信息
+    developerId = 'zcy'
+    developerName = 'zhuchunyao'
+    developerEmail = 'zcyPureAway@gmail.com'
+
+    //以上所有信息自行修改，以下不变
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: 'https://raw.githubusercontent.com/PureAway/Jcenterconfig/master/install.gradle'
+apply from: 'https://raw.githubusercontent.com/PureAway/Jcenterconfig/master/bintray.gradle'
